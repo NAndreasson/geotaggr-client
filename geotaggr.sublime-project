@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/niklas/Programmering/geotaggr-client",
+			"folder_exclude_patterns": [
+				"node_modules", "bower_components", ".sass-cache", ".tmp"
+			]
+
+		}
+	]
+}
