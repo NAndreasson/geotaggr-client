@@ -1,2 +1,0 @@
-geotaggr-client
-===============
