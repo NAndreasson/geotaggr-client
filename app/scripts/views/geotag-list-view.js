@@ -13,27 +13,27 @@ define([
     el: '#tags',
 
     events: {
-      'click li': 'selectTag'
     },
 
-    initialize: function() {
-      this.listenTo(this.collection, 'add', this.addOne);
-      this.listenTo(this.collection, 'reset', this.addAll);
+    initialize: function( options ) {
+      this.map = options.map;
 
+      this.listenTo( this.collection, 'add', this.addOne );
+      this.listenTo( this.collection, 'reset', this.addAll );
     },
 
-    addOne: function(geoTag) {
-      var view = new GeoTagItemView({ model: geoTag });
+    addOne: function( geoTag ) {
+      console.log('Add one', this);
+      var view = new GeoTagItemView({ model: geoTag, map: this.map });
       $('#tag-list').append( view.render().el );
     },
 
     addAll: function() {
-      $('#tag-list').html();
+      $('#tag-list').html('');
       this.collection.each(this.addOne, this);
     },
 
     selectTag: function() {
-      console.log('Selecting tag!');
     }
   });
 

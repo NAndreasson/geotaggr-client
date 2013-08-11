@@ -8,13 +8,19 @@ define([
 
   var GeoTagMarkerView = Backbone.View.extend({
 
-    initialize: function() {
-      this.render();
+    initialize: function(options) {
+      var map = options.map,
+
+        latLong = new google.maps.LatLng( this.model.get('lat'), this.model.get('long') ),
+        marker = new google.maps.Marker({
+          position: latLong,
+          title:"Hello World!"
+        });
+
+      marker.setMap(map);
     },
 
-    render: function() {
-
-    }
+    render: function() { }
   });
 
   return GeoTagMarkerView;
