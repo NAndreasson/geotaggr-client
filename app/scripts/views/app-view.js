@@ -1,11 +1,14 @@
 /*global define*/
 
 define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'templates'
-], function ($, _, Backbone, JST) {
+  'jquery',
+  'underscore',
+  'backbone',
+  'bootstrap',
+  'templates',
+  'collections/geotags',
+  'views/controller-view'
+], function ($, _, Backbone, Bootstrap, JST, GeoTags, ControllerView) {
     'use strict';
 
     var AppView = Backbone.View.extend({
@@ -22,7 +25,13 @@ define([
         },
 
         initialize: function() {
+          this.geoTags = new GeoTags();
+
           google.maps.event.addDomListener(window, 'load', this._initMap);
+
+          this.controllerView = new ControllerView();
+
+
         }
     });
 

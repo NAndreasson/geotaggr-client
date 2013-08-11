@@ -20,6 +20,28 @@
     </head>
     <body>
         <div id="map-canvas"></div>
+        <div id="map-controls">
+            <ul class="nav nav-tabs" id="controller-tabs">
+                <li class="active"><a href="#tags" data-toggle="tab">Tags</a></li>
+                <li><a href="#new-tag" data-toggle="tab">New Tag</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tags">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, a, facere, ipsam, sapiente recusandae quasi voluptatibus expedita quod tempore adipisci maxime libero eius fuga fugiat officia quia cum quas odio.</div>
+                <div class="tab-pane" id="new-tag">
+                    <form action="">
+                        <label for="lat">Lat:</label>
+                        <input type="text" name="lat" id="lat" placeholder="74.3">
+
+                        <label for="long">Long:</label>
+                        <input type="text" name="long" id="long" placeholder="74.3">
+
+                        <textarea name="" id="desc" cols="30" rows="10"></textarea>
+                        <button>Create</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>

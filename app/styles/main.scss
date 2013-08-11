@@ -20,3 +20,13 @@ body {
 
 #map-canvas { height: 100%; }
 #map-canvas img { max-width: none; }
+
+#map-controls {
+	position: absolute;
+	top: 40px;
+	right: 6px;
+	z-index: 3;
+	width: 200px;
+	height: 300px;
+	background: #fff;
+}
