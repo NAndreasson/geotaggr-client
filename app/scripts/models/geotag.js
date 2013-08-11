@@ -8,9 +8,10 @@ define([
 
     var GeoTag = Backbone.Model.extend({
       defaults: {
+        name: '',
+        desc: '',
         lat: 0,
-        long: 0,
-        desc: ''
+        long: 0
       }
     });
 

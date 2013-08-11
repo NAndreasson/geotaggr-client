@@ -3,8 +3,8 @@
 define([
     'underscore',
     'backbone',
-    'lsBackbone',
-    'models/geotag'
+    'models/geotag',
+    'lsBackbone'
 
 ], function (_, Backbone, GeoTag, LocalStorageBackbone) {
     'use strict';
