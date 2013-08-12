@@ -11,7 +11,7 @@ define([
         name: '',
         desc: '',
         lat: 0,
-        long: 0
+        lng: 0
       }
     });
 

@@ -1,36 +1,49 @@
+/* global define */
+
 define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'templates'
-], function ($, _, Backbone, JST) {
+  'jquery',
+  'underscore',
+  'backbone'
+], function ($, _, Backbone) {
     'use strict';
 
-  var GeoTagMarkerView = Backbone.View.extend({
+    var GeoTagMarkerView = Backbone.View.extend({
 
-    initialize: function(options) {
-      var map = options.map,
+      initialize: function(options) {
+        this.map = options.map;
 
-        latLong = new google.maps.LatLng( this.model.get('lat'), this.model.get('long') ),
-        marker = new google.maps.Marker({
-          position: latLong,
-          map: map,
+        this._initMarker();
+      },
+
+      _initMarker: function() {
+        var latLng = new google.maps.LatLng(
+          this.model.get('lat'),
+          this.model.get('lng')
+        );
+
+        this.marker = new google.maps.Marker({
+          position: latLng,
+          map: this.map,
           title: 'Hello World!'
-        }),
+        });
 
-        infowindow = new google.maps.InfoWindow({
+        this.infowindow = new google.maps.InfoWindow({
           content: this.model.get('desc')
         });
 
+        google.maps.event.addListener(this.marker, 'mouseover', this.showInfoWindow);
+      },
 
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map, marker);
-      });
+      showInfoWindow: function() {
+        this.infowindow.open(this.map, this.marker);
+      },
 
-    },
+      hideInfoWindow: function() {
+        this.infowindow.close(this.map, this.marker);
+      },
 
-    render: function() { }
+      render: function() { }
+    });
+
+    return GeoTagMarkerView;
   });
-
-  return GeoTagMarkerView;
-});

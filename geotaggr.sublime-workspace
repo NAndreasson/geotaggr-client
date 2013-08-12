@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"latL",
+				"latLng"
+			],
+			[
+				"lat",
+				"latInput"
+			],
+			[
 				"GeoTag",
 				"GeoTagListView"
 			],
@@ -506,14 +514,6 @@
 			[
 				"u",
 				"unplannedOrdersCol"
-			],
-			[
-				"apply",
-				"applyThaRules"
-			],
-			[
-				"orde",
-				"orders"
 			]
 		]
 	},
@@ -568,7 +568,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -585,6 +585,7 @@
 	},
 	"file_history":
 	[
+		"/home/niklas/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/niklas/Programmering/geotaggr-client/app/scripts/views/app-view.js",
 		"/home/niklas/Programmering/geotaggr-client/app/scripts/views/geotag-list-view.js",
 		"/home/niklas/Programmering/geotaggr-client/app/index.html",
@@ -686,7 +687,6 @@
 		"/home/niklas/BBWeb/entize-planning/views/app/internalOrder/index.html",
 		"/home/niklas/BBWeb/entize-planning/filter/sorting/index.html",
 		"/home/niklas/BBWeb/entize-planning/styles/app/internalOrder/filtering-utils.styl",
-		"/home/niklas/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/niklas/BBWeb/entize-planning/components/utils/loader/index.html",
 		"/home/niklas/BBWeb/entize-planning/components/utils/style/index.styl",
 		"/home/niklas/BBWeb/entize-planning/components/filter/index.js",
@@ -733,6 +733,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"select",
+			"long",
 			"lat",
 			"Lat",
 			"lat",
@@ -858,8 +860,6 @@
 			"tempOrders[date][j]",
 			"(tempOrder.artvikt ? tempOrder.artvikt : 1)",
 			"tempOrders[date]",
-			"orders[index[date]]",
-			"tempOrders[date][i]",
 			"orders[index[date]]"
 		],
 		"highlight": true,
@@ -896,11 +896,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -937,8 +944,20 @@
 		"selected_items":
 		[
 			[
+				"geotagm",
+				"app/scripts/views/geotag-marker-view.js"
+			],
+			[
 				"",
-				"app/scripts/views/geotag-list-view.js"
+				"app/scripts/views/app-view.js"
+			],
+			[
+				"geotag",
+				"app/scripts/views/geotag-item-view.js"
+			],
+			[
+				"index.",
+				"app/index.html"
 			],
 			[
 				"geotag-l",
@@ -995,10 +1014,6 @@
 			[
 				"main.js",
 				"app/scripts/main.js"
-			],
-			[
-				"index.",
-				"app/index.html"
 			],
 			[
 				"lyrics",
@@ -1439,14 +1454,6 @@
 			[
 				"lib/server/in",
 				"lib/server/index.js"
-			],
-			[
-				"quest",
-				"application/controllers/questions.php"
-			],
-			[
-				"question",
-				"application/models/question.php"
 			]
 		],
 		"width": 0.0
@@ -1466,7 +1473,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 257.0,
 	"status_bar_visible": true
 }

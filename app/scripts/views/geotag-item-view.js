@@ -1,41 +1,36 @@
 /*global define*/
 
 define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'templates'
+  'jquery',
+  'underscore',
+  'backbone',
+  'templates'
 ], function ($, _, Backbone, JST) {
     'use strict';
 
-  var GeoTagItemView = Backbone.View.extend({
-    tagName: 'li',
-    template: JST['app/scripts/templates/geotag-item.ejs'],
+    var GeoTagItemView = Backbone.View.extend({
+      tagName: 'li',
+      template: JST['app/scripts/templates/geotag-item.ejs'],
 
-    events: {
-      'click': 'selectItem'
-    },
+      events: {
+        'click': 'selectItem'
+      },
 
-    initialize: function( options ) {
-      this.map = options.map;
+      initialize: function( options ) {
+        this.markerView = options.markerView;
 
-      this.listenTo( this.model, 'change', this.render );
-    },
+        this.listenTo( this.model, 'change', this.render );
+      },
 
-    render: function() {
-      this.$el.html( this.template( this.model.toJSON() ) );
-      return this;
-    },
+      render: function() {
+        this.$el.html( this.template( this.model.toJSON() ) );
+        return this;
+      },
 
-    selectItem: function() {
-      console.log('Select item', this.map);
-      console.log('Select', this);
-      var latLong = new google.maps.LatLng( this.model.get('lat'), this.model.get('long') );
+      selectItem: function() {
+        this.markerView.showInfoWindow();
+      }
+    });
 
-      this.map.setOptions({ center: latLong });
-      console.log('Select??');
-    }
+    return GeoTagItemView;
   });
-
-  return GeoTagItemView;
-});

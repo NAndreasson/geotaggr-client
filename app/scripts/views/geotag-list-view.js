@@ -5,8 +5,9 @@ define([
   'underscore',
   'backbone',
   'templates',
-  'views/geotag-item-view'
-], function ($, _, Backbone, JST, GeoTagItemView) {
+  'views/geotag-item-view',
+  'views/geotag-marker-view'
+], function ($, _, Backbone, JST, GeoTagItemView, GeoTagMarkerView) {
   'use strict';
 
   var GeoTagListView = Backbone.View.extend({
@@ -23,8 +24,9 @@ define([
     },
 
     addOne: function( geoTag ) {
-      console.log('Add one', this);
-      var view = new GeoTagItemView({ model: geoTag, map: this.map });
+      var markerView = new GeoTagMarkerView({ model: geoTag, map: this.map }),
+        view = new GeoTagItemView({ model: geoTag, markerView: markerView });
+
       $('#tag-list').append( view.render().el );
     },
 

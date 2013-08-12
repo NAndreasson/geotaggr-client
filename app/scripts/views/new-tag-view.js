@@ -32,11 +32,7 @@ define([
         desc: this.$descInput.val()
       };
 
-      console.log('New newAttributes', newAttributes);
-      // get name, lat, long and desc and create a new GeoTag
-
-      // reset the input fields
-
+      this.collection.create( newAttributes );
     },
 
     render: function() {
