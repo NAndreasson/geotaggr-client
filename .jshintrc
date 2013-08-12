@@ -1,4 +1,7 @@
 {
+    "globals": {
+        "google": true
+    },
     "node": true,
     "browser": true,
     "esnext": true,
