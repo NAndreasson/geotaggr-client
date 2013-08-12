@@ -18,14 +18,25 @@ define([
 
         template: JST['app/scripts/templates/application.ejs'],
 
+        events: {
+          'click #map-canvas': 'dropNewMarker'
+        },
+
         _initMap: function() {
-          var mapOptions = {
-            center: new google.maps.LatLng(62, 15),
-            zoom: 8,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
+          var self = this,
+            mapOptions = {
+              center: new google.maps.LatLng(62, 15),
+              zoom: 8,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
 
           this.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+          google.maps.event.addListener(this.map, 'click', function( ev ) {
+            var latLng = ev.latLng;
+            self.dropNewMarker( latLng );
+          });
+
         },
 
         initialize: function() {
@@ -51,6 +62,15 @@ define([
 
         addMarkers: function() {
           // go through the whole collection and call addMarker
+        },
+
+        dropNewMarker: function( latLng ) {
+          new google.maps.Marker({
+            position: latLng,
+            map: this.map,
+            animation: google.maps.Animation.DROP,
+            title: 'Hello World!'
+          });
         }
 
     });

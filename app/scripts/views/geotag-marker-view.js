@@ -14,10 +14,19 @@ define([
         latLong = new google.maps.LatLng( this.model.get('lat'), this.model.get('long') ),
         marker = new google.maps.Marker({
           position: latLong,
-          title:"Hello World!"
+          map: map,
+          title: 'Hello World!'
+        }),
+
+        infowindow = new google.maps.InfoWindow({
+          content: this.model.get('desc')
         });
 
-      marker.setMap(map);
+
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+      });
+
     },
 
     render: function() { }

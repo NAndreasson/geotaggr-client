@@ -16,11 +16,23 @@ define([
     },
 
     initialize: function() {
+      this.$nameInput = this.$('#name');
+      this.$latInput  = this.$('#lat');
+      this.$longInput = this.$('#long');
+      this.$descInput = this.$('#desc');
     },
 
     createNewTag: function(e) {
       e.preventDefault();
 
+      var newAttributes = {
+        name: this.$nameInput.val(),
+        lat: +this.$latInput.val(),
+        lng: +this.$longInput.val(),
+        desc: this.$descInput.val()
+      };
+
+      console.log('New newAttributes', newAttributes);
       // get name, lat, long and desc and create a new GeoTag
 
       // reset the input fields

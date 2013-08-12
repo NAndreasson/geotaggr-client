@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"GeoTag",
+				"GeoTagListView"
+			],
+			[
 				"ignoreW",
 				"ignoreWordsArr"
 			],
@@ -510,19 +514,19 @@
 			[
 				"orde",
 				"orders"
-			],
-			[
-				"rule",
-				"rulesApplier"
 			]
 		]
 	},
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 201.0,
+		"height": 54.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"enable",
 				"Package Control: Enable Package"
@@ -534,10 +538,6 @@
 			[
 				"disable ",
 				"SublimeLinter: Disable Linting"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"list",
@@ -568,7 +568,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -585,9 +585,22 @@
 	},
 	"file_history":
 	[
-		"/home/niklas/Programmering/geotaggr-client/app/scripts/models/geotag.js",
-		"/home/niklas/Programmering/geotaggr-client/geotaggr.sublime-project",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/views/app-view.js",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/views/geotag-list-view.js",
+		"/home/niklas/Programmering/geotaggr-client/app/index.html",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/views/new-tag-view.js",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/views/geotag-marker-view.js",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/templates/geotag-item.ejs",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/views/geotag-item-view.js",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/main.js",
+		"/home/niklas/Programmering/geotaggr-client/app/styles/main.scss",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/views/controller-view.js",
 		"/home/niklas/Programmering/geotaggr-client/.jshintrc",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/collections/geotags.js",
+		"/home/niklas/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/niklas/Programmering/geotaggr-client/geotaggr.sublime-project",
+		"/home/niklas/.config/sublime-text-2/Packages/User/JSON.sublime-settings",
+		"/home/niklas/Programmering/geotaggr-client/app/scripts/models/geotag.js",
 		"/home/niklas/Programmering/geotaggr-client/node_modules/grunt-contrib-jshint/node_modules/.bin/jshint",
 		"/home/niklas/Programmering/geotaggr-client/app/404.html",
 		"/home/niklas/Programmering/geotaggr-client/package.json",
@@ -699,20 +712,7 @@
 		"/home/niklas/BBWeb/entize-planning/node_modules/derby/node_modules/racer/lib/Model/filter.js",
 		"/home/niklas/BBWeb/entize-planning/node_modules/derby/node_modules/racer/lib/Model/ref.js",
 		"/home/niklas/BBWeb/entize-planning/node_modules/derby/node_modules/racer/lib/Model/setDiff.js",
-		"/home/niklas/BBWeb/entize-planning/node_modules/derby/node_modules/racer/lib/Model/bundle.js",
-		"/home/niklas/BBWeb/entize-planning/node_modules/derby/node_modules/racer/lib/Model/Query.js",
-		"/home/niklas/BBWeb/entize-planning/node_modules/derby/lib/textOt.js",
-		"/home/niklas/BBWeb/entize-planning/node_modules/derby/lib/refresh.server.js",
-		"/home/niklas/BBWeb/entize-planning/node_modules/derby/lib/refresh.js",
-		"/home/niklas/BBWeb/entize-planning/node_modules/derby-ui-boot/node_modules/bootstrap/less/variables.less",
-		"/home/niklas/BBWeb/entize-planning/styles/app/internalorder/filtering-utils.styl",
-		"/home/niklas/BBWeb/entize-planning/lib/server/utils.js",
-		"/home/niklas/BBWeb/entize-planning/node_modules/redis/index.js",
-		"/home/niklas/BBWeb/entize-planning/public/js/jquery.min.js",
-		"/home/niklas/Skrivbord/style.css",
-		"/home/niklas/Skrivbord/index.html",
-		"/home/niklas/Skrivbord/jquery.js",
-		"/home/niklas/Skrivbord/javascript.js"
+		"/home/niklas/BBWeb/entize-planning/node_modules/derby/node_modules/racer/lib/Model/bundle.js"
 	],
 	"find":
 	{
@@ -733,6 +733,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lat",
+			"Lat",
+			"lat",
+			"tab",
+			"\"></",
 			"ApplicationCollection",
 			"'",
 			"callback",
@@ -855,12 +860,7 @@
 			"tempOrders[date]",
 			"orders[index[date]]",
 			"tempOrders[date][i]",
-			"orders[index[date]]",
-			"count",
-			"index",
-			"Index",
-			"_page.filterInfo",
-			"left-orders"
+			"orders[index[date]]"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -938,7 +938,51 @@
 		[
 			[
 				"",
-				"app/scripts/models/geotag.js"
+				"app/scripts/views/geotag-list-view.js"
+			],
+			[
+				"geotag-l",
+				"app/scripts/views/geotag-list-view.js"
+			],
+			[
+				"geotag-item",
+				"app/scripts/views/geotag-item-view.js"
+			],
+			[
+				"list",
+				"app/scripts/views/geotag-list-view.js"
+			],
+			[
+				"app-vi",
+				"app/scripts/views/app-view.js"
+			],
+			[
+				"ine",
+				"app/index.html"
+			],
+			[
+				"jsh",
+				".jshintrc"
+			],
+			[
+				"index",
+				"app/index.html"
+			],
+			[
+				"app",
+				"app/scripts/views/app-view.js"
+			],
+			[
+				"sass",
+				"app/styles/main.scss"
+			],
+			[
+				"app-",
+				"app/scripts/views/app-view.js"
+			],
+			[
+				"styles",
+				"app/styles/main.scss"
 			],
 			[
 				"sublime",
@@ -1213,10 +1257,6 @@
 				"lib/app/internalOrder/rulesApplier.js"
 			],
 			[
-				"index",
-				"styles/app/index.styl"
-			],
-			[
 				"rulesmodals",
 				"lib/app/internalOrder/rulesModals.js"
 			],
@@ -1341,10 +1381,6 @@
 				"src/Graph.java"
 			],
 			[
-				"app",
-				"app.js"
-			],
-			[
 				"lib/server/inde",
 				"lib/server/index.js"
 			],
@@ -1411,42 +1447,6 @@
 			[
 				"question",
 				"application/models/question.php"
-			],
-			[
-				"questions",
-				"application/controllers/questions.php"
-			],
-			[
-				"routes",
-				"application/routes.php"
-			],
-			[
-				"index.blade",
-				"application/views/questions/index.blade.php"
-			],
-			[
-				"que",
-				"application/models/question.php"
-			],
-			[
-				"views/que",
-				"application/views/questions/index.blade.php"
-			],
-			[
-				"views/inde",
-				"application/views/questions/index.blade.php"
-			],
-			[
-				"migrations",
-				"application/migrations/2013_04_16_103327_create_questions_table.php"
-			],
-			[
-				"application/models/use",
-				"application/models/user.php"
-			],
-			[
-				"contoll",
-				"application/controllers/users.php"
 			]
 		],
 		"width": 0.0
@@ -1467,6 +1467,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 241.0,
+	"side_bar_width": 257.0,
 	"status_bar_visible": true
 }
