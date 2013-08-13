@@ -520,9 +520,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 54.0,
+		"height": 180.0,
 		"selected_items":
 		[
+			[
+				"ipac",
+				"Package Control: List Packages"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -568,7 +572,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 467.0
+		"width": 564.0
 	},
 	"console":
 	{
@@ -733,6 +737,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lat",
+			"latLong",
 			"select",
 			"long",
 			"lat",
@@ -858,9 +864,7 @@
 			"model",
 			"tempOrdersOnDate[j]",
 			"tempOrders[date][j]",
-			"(tempOrder.artvikt ? tempOrder.artvikt : 1)",
-			"tempOrders[date]",
-			"orders[index[date]]"
+			"(tempOrder.artvikt ? tempOrder.artvikt : 1)"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -907,7 +911,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.460516324981,
 			1.0
 		],
 		"rows":
@@ -944,20 +948,56 @@
 		"selected_items":
 		[
 			[
-				"geotagm",
+				"",
+				"app/scripts/views/new-tag-view.js"
+			],
+			[
+				"s",
+				"app/styles/main.scss"
+			],
+			[
+				"inde",
+				"app/index.html"
+			],
+			[
+				"newt",
+				"app/scripts/views/new-tag-view.js"
+			],
+			[
+				"geo",
 				"app/scripts/views/geotag-marker-view.js"
 			],
 			[
-				"",
-				"app/scripts/views/app-view.js"
+				"index.",
+				"app/index.html"
+			],
+			[
+				"main.",
+				"app/styles/main.scss"
+			],
+			[
+				"geot",
+				"app/scripts/views/geotag-list-view.js"
 			],
 			[
 				"geotag",
 				"app/scripts/views/geotag-item-view.js"
 			],
 			[
-				"index.",
-				"app/index.html"
+				"geotag.j",
+				"app/scripts/models/geotag.js"
+			],
+			[
+				"jshint",
+				".jshintrc"
+			],
+			[
+				"app-vi",
+				"app/scripts/views/app-view.js"
+			],
+			[
+				"geotagm",
+				"app/scripts/views/geotag-marker-view.js"
 			],
 			[
 				"geotag-l",
@@ -970,10 +1010,6 @@
 			[
 				"list",
 				"app/scripts/views/geotag-list-view.js"
-			],
-			[
-				"app-vi",
-				"app/scripts/views/app-view.js"
 			],
 			[
 				"ine",
@@ -1006,10 +1042,6 @@
 			[
 				"sublime",
 				"geotaggr.sublime-project"
-			],
-			[
-				"jshint",
-				"node_modules/grunt-contrib-jshint/node_modules/.bin/jshint"
 			],
 			[
 				"main.js",
@@ -1426,34 +1458,6 @@
 			[
 				"crons",
 				"cronScript.sh"
-			],
-			[
-				"incomi",
-				"views/app/incoming.html"
-			],
-			[
-				"d",
-				"DummyModel.java"
-			],
-			[
-				"html",
-				"MainApplet.html"
-			],
-			[
-				"main",
-				"MainApplet.html"
-			],
-			[
-				"boucin",
-				"BouncingBalls.java"
-			],
-			[
-				"anim",
-				"Animator.java"
-			],
-			[
-				"lib/server/in",
-				"lib/server/index.js"
 			]
 		],
 		"width": 0.0
@@ -1465,7 +1469,7 @@
 		[
 			[
 				"",
-				"/home/niklas/BBWeb/entize-planning/entize-planning.sublime-project"
+				"/home/niklas/Programmering/geotaggr-client/geotaggr.sublime-project"
 			]
 		],
 		"width": 380.0
