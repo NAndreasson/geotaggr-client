@@ -3,82 +3,80 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Geotaggr - Tag memorable locations</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ6KSFb4Rej7eSLFU-kxrA0_gw0e96xSo&sensor=true">
-    </script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Geotaggr - Tag memorable locations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ6KSFb4Rej7eSLFU-kxrA0_gw0e96xSo&sensor=true">
+  </script>
+</head>
+<body>
+  <div id="map-canvas"></div>
+  <div id="map-controls">
+    <ul class="nav nav-tabs" id="controller-tabs">
+      <li class="active"><a href="#tags" data-toggle="tab">Tags</a></li>
+      <li><a href="#new-tag" data-toggle="tab">New Tag</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tags">
+        <ul id="tag-list">
+        </ul>
+      </div>
+      <div class="tab-pane" id="new-tag">
+        <form id="new-tag-form">
+          <ul>
+            <li>
+              <div class="input-prepend">
+                <span class="add-on">Name</span>
+                <input type="text" id="name" placeholder="Summerplace">
+              </div>
+            </li>
+            <li>
+              <div class="input-prepend">
+                <span class="add-on">Lat</span>
+                <input type="text" id="lat" placeholder="0.0">
+              </div>
+            </li>
+            <li>
+              <div class="input-prepend">
+                <span class="add-on">Long</span>
+                <input type="text" id="lng" placeholder="0.0">
+              </div>
+            </li>
+            <li>
+              <label for="desc">Description</label>
+              <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+            </li>
+            <li>
+              <button type="submit" class="btn btn-success" id="new-tag-button">Create</button>
+            </li>
+          </ul>
+        </form>
 
-    </head>
-    <body>
-        <div id="map-canvas"></div>
-        <div id="map-controls">
-            <ul class="nav nav-tabs" id="controller-tabs">
-                <li class="active"><a href="#tags" data-toggle="tab">Tags</a></li>
-                <li><a href="#new-tag" data-toggle="tab">New Tag</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="tags">
-                    <ul id="tag-list">
-                    </ul>
-                </div>
-                <div class="tab-pane" id="new-tag">
-                    <form id="new-tag-form">
-                      <ul>
-                        <li>
-                            <div class="input-prepend">
-                                <span class="add-on">Name</span>
-                                <input type="text" id="name" name="name" placeholder="Summerplace">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="input-prepend">
-                                <span class="add-on">Lat</span>
-                                <input type="text" placeholder="0.0">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="input-prepend">
-                                <span class="add-on">Long</span>
-                                <input type="text" placeholder="0.0">
-                            </div>
-                        </li>
-                        <li>
-                          <label for="">Description</label>
-                          <textarea name="" id="desc" cols="30" rows="10"></textarea>
-                        </li>
-                        <li>
-                          <button type="submit" class="btn btn-success" id="new-tag-button">Create</button>
-                        </li>
-                      </ul>
-                    </form>
+      </div>
+    </div>
+  </div>
+  <!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
 
-                </div>
-            </div>
-        </div>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
 
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-
-        <!-- build:js scripts/main.js -->
-        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
-        <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+  <!-- endbuild -->
 </body>
 </html>
