@@ -39,6 +39,12 @@ body {
   }
 }
 
+.tab-content {
+  background: #fff;
+  border-radius: 0 5px 5px 5px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
 ul#tag-list {
   padding-left: 10px;
 
@@ -58,36 +64,32 @@ ul#tag-list {
 #new-tag-form {
 
   ul {
-    width: 200px;
+    width: 180px;
+    margin: 10px auto
   }
 
   li {
-    padding: 3px 10px;
     line-height: 35px;
   }
 
-  label {
-    width: 70px;
-    display: inline-block;
+  .add-on {
+    width: 35px;
   }
 
   input {
     float: right;
-    width: 90px;
+    width: 120px;
     display: inline-block;
   }
 
   textarea {
-    width: 160px;
+    width: 180px;
+    box-sizing: border-box;
   }
 
   #new-tag-button {
-    width: 174px;
+    width: 180px;
   }
-}
-
-.tab-content {
-  background: #fff
 }
 
 .nav-tabs > li > a {
