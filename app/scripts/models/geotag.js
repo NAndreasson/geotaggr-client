@@ -1,8 +1,8 @@
 /*global define*/
 
 define([
-    'underscore',
-    'backbone'
+  'underscore',
+  'backbone'
 ], function (_, Backbone) {
     'use strict';
 
@@ -10,10 +10,11 @@ define([
       defaults: {
         name: '',
         desc: '',
+        country: '',
         lat: 0,
         lng: 0
       }
     });
 
     return GeoTag;
-});
+  });

@@ -24,6 +24,8 @@ define([
     },
 
     addOne: function( geoTag ) {
+      this.$('.empty').remove();
+
       var markerView = new GeoTagMarkerView({ model: geoTag, map: this.map }),
         view = new GeoTagItemView({ model: geoTag, markerView: markerView });
 

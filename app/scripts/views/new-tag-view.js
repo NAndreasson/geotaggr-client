@@ -4,8 +4,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'templates'
-], function ($, _, Backbone) {
+  'helpers/geo'
+], function ($, _, Backbone, GeoUtil) {
     'use strict';
 
     var NewTagView = Backbone.View.extend({
@@ -43,13 +43,27 @@ define([
           animation: google.maps.Animation.DROP,
           title: 'Hello World!'
         });
+
+        GeoUtil.getCountry( latLng, function(err, country) {
+          console.log('Err', err);
+          console.log('Country', country);
+        });
       },
 
       createNewTag: function( e ) {
         e.preventDefault();
 
-        this.collection.create( this.newAttributes() );
-        this.clearAttributes();
+        var self = this,
+          newAttributes = this.newAttributes(),
+          latLng = new google.maps.LatLng(newAttributes.lat, newAttributes.lng);
+
+        GeoUtil.getCountry(latLng, function(err, country) {
+          console.log('Country', country);
+          newAttributes.country = country || '';
+
+          self.collection.create( newAttributes );
+          self.clearAttributes();
+        });
       },
 
       newAttributes: function() {

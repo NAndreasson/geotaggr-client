@@ -48,10 +48,18 @@ body {
 ul#tag-list {
   padding: 5px 10px;
 
-  li {
+  .name {
     cursor: pointer;
-    line-height: 1.6em;
     color: #0088cc;
+  }
+
+  .country {
+    color: #888;
+    font-style: italic;
+  }
+
+  li {
+    line-height: 1.6em;
 
     &:hover {
       text-decoration: underline;
