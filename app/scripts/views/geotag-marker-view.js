@@ -19,10 +19,11 @@ define([
       },
 
       _initMarker: function() {
-        var latLng = new google.maps.LatLng(
-          this.model.get('lat'),
-          this.model.get('lng')
-        );
+        var self = this,
+          latLng = new google.maps.LatLng(
+            this.model.get('lat'),
+            this.model.get('lng')
+          );
 
         this.marker = new google.maps.Marker({
           position: latLng,
@@ -34,7 +35,9 @@ define([
           content: this.model.get('desc')
         });
 
-        google.maps.event.addListener(this.marker, 'mouseover', this.showInfoWindow);
+        google.maps.event.addListener(this.marker, 'mouseover', function() {
+          self.showInfoWindow();
+        });
       },
 
       _removeMarker: function() {

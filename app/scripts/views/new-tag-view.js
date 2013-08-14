@@ -43,11 +43,6 @@ define([
           animation: google.maps.Animation.DROP,
           title: 'Hello World!'
         });
-
-        GeoUtil.getCountry( latLng, function(err, country) {
-          console.log('Err', err);
-          console.log('Country', country);
-        });
       },
 
       createNewTag: function( e ) {
