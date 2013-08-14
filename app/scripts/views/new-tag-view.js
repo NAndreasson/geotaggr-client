@@ -13,6 +13,7 @@ define([
 
       events: {
         'click #new-tag-button': 'createNewTag',
+        'change #lat, #lng': 'latLngInputChanged'
       },
 
       initialize: function( options ) {
@@ -31,18 +32,49 @@ define([
 
         google.maps.event.addListener(this.map, 'rightclick', function( ev ) {
           var latLng = ev.latLng;
-          self.dropNewMarker( latLng );
+          self.updateGhostMarker( latLng );
+          self.updateLatLngInput( latLng );
         });
 
       },
 
-      dropNewMarker: function( latLng ) {
-        new google.maps.Marker({
+      updateGhostMarker: function( latLng ) {
+        this.removeGhostMarker();
+
+        var newIcon = {
+          path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+          fillColor: 'blue',
+          fillOpacity: 0.8,
+          scale: 7,
+          strokeWeight: 1
+        };
+
+        this.ghostMarker = new google.maps.Marker({
           position: latLng,
           map: this.map,
-          animation: google.maps.Animation.DROP,
-          title: 'Hello World!'
+          icon: newIcon,
+          animation: google.maps.Animation.DROP
         });
+      },
+
+      removeGhostMarker: function() {
+        if (this.ghostMarker) {
+          this.ghostMarker.setMap( null );
+          this.ghostMarker = null;
+        }
+      },
+
+      updateLatLngInput: function( latLng ) {
+        this.$latInput.val( latLng.lat() );
+        this.$lngInput.val( latLng.lng() );
+      },
+
+      latLngInputChanged: function() {
+        var lat = Number( this.$latInput.val() ),
+          lng = Number ( this.$lngInput.val() ),
+          latLng = new google.maps.LatLng(lat, lng);
+        console.log('Latlng', latLng);
+        if (lat && lng) this.updateGhostMarker( latLng );
       },
 
       createNewTag: function( e ) {
@@ -53,11 +85,12 @@ define([
           latLng = new google.maps.LatLng(newAttributes.lat, newAttributes.lng);
 
         GeoUtil.getCountry(latLng, function(err, country) {
-          console.log('Country', country);
           newAttributes.country = country || '';
 
           self.collection.create( newAttributes );
           self.clearAttributes();
+
+          self.removeGhostMarker();
         });
       },
 
