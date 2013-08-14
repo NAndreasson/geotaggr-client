@@ -13,13 +13,15 @@ define([
       template: JST['app/scripts/templates/geotag-item.ejs'],
 
       events: {
-        'click': 'selectItem'
+        'click .name': 'selectItem',
+        'click .close': 'deleteItem'
       },
 
       initialize: function( options ) {
         this.markerView = options.markerView;
 
         this.listenTo( this.model, 'change', this.render );
+        this.listenTo( this.model, 'destroy', this.remove );
       },
 
       render: function() {
@@ -28,7 +30,12 @@ define([
       },
 
       selectItem: function() {
+        this.markerView.panTo();
         this.markerView.showInfoWindow();
+      },
+
+      deleteItem: function() {
+        this.model.destroy();
       }
     });
 
