@@ -28,12 +28,6 @@ define([
           };
 
         this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-        google.maps.event.addListener(this.map, 'rightclick', function( ev ) {
-          var latLng = ev.latLng;
-          self.dropNewMarker( latLng );
-        });
-
       },
 
       initialize: function() {
@@ -41,19 +35,10 @@ define([
 
         this._initMap();
 
-        this.newTagView = new NewTagView({ collection: this.geoTags });
+        this.newTagView = new NewTagView({ collection: this.geoTags, map: this.map });
         this.geoTagListView = new GeoTagListView({ collection: this.geoTags, map: this.map });
 
         this.geoTags.fetch();
-      },
-
-      dropNewMarker: function( latLng ) {
-        new google.maps.Marker({
-          position: latLng,
-          map: this.map,
-          animation: google.maps.Animation.DROP,
-          title: 'Hello World!'
-        });
       }
 
     });
