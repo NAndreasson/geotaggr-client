@@ -17,7 +17,6 @@ define([
       template: JST['app/scripts/templates/application.ejs'],
 
       events: {
-        'click #map-canvas': 'dropNewMarker'
       },
 
       _initMap: function() {
@@ -30,7 +29,7 @@ define([
 
         this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-        google.maps.event.addListener(this.map, 'click', function( ev ) {
+        google.maps.event.addListener(this.map, 'rightclick', function( ev ) {
           var latLng = ev.latLng;
           self.dropNewMarker( latLng );
         });
