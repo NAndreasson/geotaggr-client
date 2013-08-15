@@ -73,7 +73,7 @@ define([
         var lat = Number( this.$latInput.val() ),
           lng = Number ( this.$lngInput.val() ),
           latLng = new google.maps.LatLng(lat, lng);
-        console.log('Latlng', latLng);
+
         if (lat && lng) this.updateGhostMarker( latLng );
       },
 

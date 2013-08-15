@@ -13,7 +13,10 @@ define([
         country: '',
         lat: 0,
         lng: 0
-      }
+      },
+
+      validate: function() { }
+
     });
 
     return GeoTag;
