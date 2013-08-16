@@ -32,21 +32,20 @@
         </ul>
       </div>
       <div class="tab-pane" id="new-tag">
-        <div class="alert alert-error" style="margin-bottom: 0px">
+        <div class="alert alert-error" style="margin-bottom: 0px" hidden>
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <ul style="padding-left: 8px">
-            <li>Name is required</li>
-            <li>Lat must be in valid format</li>
-            <li>Long must be in valid format</li>
+            <li name="name"></li>
+            <li name="lat"></li>
+            <li name="lng"></li>
           </ul>
         </div>
         <ul id="new-tag-form">
             <li>
               <div class="input-prepend">
                 <span class="add-on">Name</span>
-                <input type="text" id="name" name="name" placeholder="Summerplace" required>
+                <input type="text" id="name" placeholder="Summerplace" required>
               </div>
-              <div data-msg='name'></div>
             </li>
             <li>
               <div class="input-prepend">

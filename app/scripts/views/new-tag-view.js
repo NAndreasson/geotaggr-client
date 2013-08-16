@@ -14,7 +14,7 @@ define([
       el: '#new-tag',
 
       events: {
-        'click #new-tag-button': 'createNewTag',
+        'click #new-tag-button': 'submitNewTag',
         'change #lat, #lng': 'latLngInputChanged'
       },
 
@@ -82,27 +82,38 @@ define([
         if (lat && lng) this.updateGhostMarker( latLng );
       },
 
-      createNewTag: function( e ) {
+      submitNewTag: function( e ) {
         e.preventDefault();
 
         var self = this,
-          newAttributes = this.newAttributes(),
-          latLng = new google.maps.LatLng(newAttributes.lat, newAttributes.lng);
+          newAttributes = this.newAttributes();
 
-        console.log('New attributes', newAttributes);
+        this.model.set( newAttributes );
 
-        if ( this.model.set(newAttributes) ) {
-          console.log('Whay to go!');
+        if ( this.model.isValid( true ) ) {
+          this.createNewTag();
+
+          self.clearAttributes();
+          self.hideAlert();
+          self.removeGhostMarker();
+          this.model = new GeoTag();
+
+        } else {
+          this.showAlert();
         }
+      },
 
-        // GeoUtil.getCountry(latLng, function(err, country) {
-        //   newAttributes.country = country || '';
+      createNewTag: function() {
+        var self = this,
+          model = this.model,
+          latLng = new google.maps.LatLng( model.get('lat'), model.get('lng') );
 
-        //   self.collection.create( newAttributes );
-        //   self.clearAttributes();
+        GeoUtil.getCountry(latLng, function(err, country) {
+          var country = country || '';
+          model.set('country', country);
 
-        //   self.removeGhostMarker();
-        // });
+          self.collection.add( model );
+        });
       },
 
       newAttributes: function() {
@@ -119,6 +130,22 @@ define([
         this.$latInput.val('');
         this.$lngInput.val('');
         this.$descInput.val('');
+      },
+
+      showAlert: function() {
+        var $alert = $('.alert');
+        $alert.find('li').hide();
+
+        $('.invalid').each(function() {
+          var $el = $( this );
+          $el.show().text( $el.data('error') );
+        });
+
+        $alert.show();
+      },
+
+      hideAlert: function() {
+        $('.alert').hide();
       }
 
     });
