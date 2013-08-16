@@ -1,11 +1,6 @@
 $iconSpritePath: '/images/glyphicons-halflings.png';
 @import 'sass-bootstrap/lib/bootstrap';
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-}
-
 html {
  height: 100%;
 }
@@ -32,10 +27,13 @@ body {
 	width: 200px;
 
   ul {
-    list-style: none;
     margin: 0;
     padding: 0;
   }
+}
+
+.nav-tabs > li > a {
+  background: #eee
 }
 
 .tab-content {
@@ -43,10 +41,14 @@ body {
   border-radius: 0 5px 5px 5px;
   border-left: 1px solid #ddd;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+  padding: 10px;
+}
+
+.tag-list {
+
 }
 
 ul#tag-list {
-  padding: 5px 10px;
 
   .name {
     cursor: pointer;
@@ -70,10 +72,13 @@ ul#tag-list {
 
 ul#new-tag-form {
     width: 180px;
-    margin: 10px auto;
 
   li {
-    line-height: 35px;
+    line-height: 15px;
+  }
+
+  .input-prepend {
+    margin-bottom: 0px;
   }
 
   .add-on {
@@ -91,11 +96,8 @@ ul#new-tag-form {
     box-sizing: border-box;
   }
 
-  #new-tag-button {
-    width: 180px;
-  }
 }
 
-.nav-tabs > li > a {
-  background: #eee
+#new-tag-button {
+  width: 180px;
 }

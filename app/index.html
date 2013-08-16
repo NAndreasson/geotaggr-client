@@ -19,6 +19,7 @@
 </head>
 <body>
   <div id="map-canvas"></div>
+
   <div id="map-controls">
     <ul class="nav nav-tabs" id="controller-tabs">
       <li class="active"><a href="#tags" data-toggle="tab">Tags</a></li>
@@ -26,12 +27,20 @@
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="tags">
-        <ul id="tag-list">
+        <ul id="tag-list" class="tag-list">
           <span class="empty" style="color: #888">Empty</span>
         </ul>
       </div>
       <div class="tab-pane" id="new-tag">
-          <ul id="new-tag-form">
+        <div class="alert alert-error" style="margin-bottom: 0px">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <ul style="padding-left: 8px">
+            <li>Name is required</li>
+            <li>Lat must be in valid format</li>
+            <li>Long must be in valid format</li>
+          </ul>
+        </div>
+        <ul id="new-tag-form">
             <li>
               <div class="input-prepend">
                 <span class="add-on">Name</span>
