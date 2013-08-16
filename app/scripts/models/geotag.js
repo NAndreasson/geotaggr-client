@@ -15,7 +15,16 @@ define([
         lng: 0
       },
 
-      validate: function() { }
+      validation: {
+        name: [{
+          required: true,
+          msg: 'Please enter a name'
+        }, {
+          minLength: 3,
+          maxLength: 30,
+          msg: 'Name length min 3 characters, max 30'
+        }]
+      }
 
     });
 

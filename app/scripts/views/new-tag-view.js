@@ -4,8 +4,10 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'helpers/geo'
-], function ($, _, Backbone, GeoUtil) {
+  'validation',
+  'helpers/geo',
+  'models/geotag'
+], function ($, _, Backbone, Validation, GeoUtil, GeoTag) {
     'use strict';
 
     var NewTagView = Backbone.View.extend({
@@ -18,6 +20,9 @@ define([
 
       initialize: function( options ) {
         this.map = options.map;
+
+        this.model = new GeoTag();
+        Validation.bind(this);
 
         this._initNewMarkerListener();
 
@@ -84,14 +89,20 @@ define([
           newAttributes = this.newAttributes(),
           latLng = new google.maps.LatLng(newAttributes.lat, newAttributes.lng);
 
-        GeoUtil.getCountry(latLng, function(err, country) {
-          newAttributes.country = country || '';
+        console.log('New attributes', newAttributes);
 
-          self.collection.create( newAttributes );
-          self.clearAttributes();
+        if ( this.model.set(newAttributes) ) {
+          console.log('Whay to go!');
+        }
 
-          self.removeGhostMarker();
-        });
+        // GeoUtil.getCountry(latLng, function(err, country) {
+        //   newAttributes.country = country || '';
+
+        //   self.collection.create( newAttributes );
+        //   self.clearAttributes();
+
+        //   self.removeGhostMarker();
+        // });
       },
 
       newAttributes: function() {
@@ -108,9 +119,8 @@ define([
         this.$latInput.val('');
         this.$lngInput.val('');
         this.$descInput.val('');
-      },
+      }
 
-      render: function() { }
     });
 
     return NewTagView;

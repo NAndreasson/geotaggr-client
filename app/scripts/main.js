@@ -23,7 +23,8 @@ require.config({
     backbone: '../bower_components/backbone/backbone',
     underscore: '../bower_components/underscore/underscore',
     bootstrap: 'vendor/bootstrap',
-    lsBackbone: 'vendor/backbone.localStorage-min'
+    lsBackbone: 'vendor/backbone.localStorage-min',
+    validation: 'vendor/backbone-validation-amd-min'
   }
 });
 

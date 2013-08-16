@@ -71,10 +71,11 @@ ul#tag-list {
 }
 
 ul#new-tag-form {
-    width: 180px;
+  list-style: none;
+  width: 180px;
 
   li {
-    line-height: 15px;
+    margin: 10px 0;
   }
 
   .input-prepend {
