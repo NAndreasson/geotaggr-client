@@ -10,6 +10,8 @@ The fun part is not to be forgotten!
 Technologies
 ------------
 
+* Backbone.js
+* Google Maps API
 
 Style
 ------
