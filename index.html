@@ -1,0 +1,77 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Geotaggr - Tag memorable locations</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/38a0609f.main.css">
+  <script src="scripts/vendor/f7f27360.modernizr.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ6KSFb4Rej7eSLFU-kxrA0_gw0e96xSo&sensor=true">
+  </script>
+</head>
+<body>
+  <div id="map-canvas"></div>
+
+  <div id="map-controls">
+    <ul class="nav nav-tabs" id="controller-tabs">
+      <li class="active"><a href="#tags" data-toggle="tab">Tags</a></li>
+      <li><a href="#new-tag" data-toggle="tab">New Tag</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tags">
+        <ul id="tag-list" class="tag-list">
+          <span class="empty" style="color: #888">Empty</span>
+        </ul>
+      </div>
+      <div class="tab-pane" id="new-tag">
+        <div class="alert alert-error" style="margin-bottom: 0px" hidden="">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <ul style="padding-left: 8px">
+            <li name="name"></li>
+            <li name="lat"></li>
+            <li name="lng"></li>
+          </ul>
+        </div>
+        <ul id="new-tag-form">
+            <li>
+              <div class="input-prepend">
+                <span class="add-on">Name</span>
+                <input type="text" id="name" placeholder="Summerplace" required="">
+              </div>
+            </li>
+            <li>
+              <div class="input-prepend">
+                <span class="add-on">Lat</span>
+                <input type="text" id="lat" name="lat" placeholder="0.0" pattern="\d+\.?\d*">
+              </div>
+            </li>
+            <li>
+              <div class="input-prepend">
+                <span class="add-on">Long</span>
+                <input type="text" id="lng" name="lng" placeholder="0.0" pattern="\d+\.?\d*">
+              </div>
+            </li>
+            <li>
+              <label for="desc">Description</label>
+              <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+            </li>
+            <li>
+              <button type="submit" class="btn btn-success" id="new-tag-button">Create</button>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <!--[if lt IE 7]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
+
+  <script data-main="scripts/fe6bafe4.main" src="bower_components/requirejs/require.js"></script>
+</body>
+</html>
