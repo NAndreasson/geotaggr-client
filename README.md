@@ -1,6 +1,9 @@
 geotaggr-client
 ===============
 
+Example: http://nandreasson.github.io/geotaggr-client/ (right-click on map for dropping tags)
+
+
 Why
 -------------
 
