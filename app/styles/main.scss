@@ -1,15 +1,8 @@
 $iconSpritePath: '/images/glyphicons-halflings.png';
-@import 'sass-bootstrap/lib/bootstrap';
-
-html {
- height: 100%;
-}
-
-body {
-    height: 100%;
-    margin:0;
-    padding: 0;
-}
+@import
+  "sass-bootstrap/lib/bootstrap",
+  "base",
+  "modules/tab";
 
 #map-canvas {
   height: 100%;
@@ -36,17 +29,6 @@ body {
   background: #eee
 }
 
-.tab-content {
-  background: #fff;
-  border-radius: 0 5px 5px 5px;
-  border-left: 1px solid #ddd;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
-  padding: 10px;
-}
-
-.tag-list {
-
-}
 
 ul#tag-list {
 
